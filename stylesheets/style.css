@@ -1,0 +1,48 @@
+body {
+    background-color: lightblue;
+}
+
+.default-post {
+    margin-left: 5cm;
+    margin-right: 5cm;
+    text-align: center;
+    border: 1px solid white;
+    overflow-wrap: break-word;
+}
+
+.create-comment{
+    margin-top: 1cm;
+    text-align: center;
+}
+
+.comment-box {
+    width: 75%;
+    height: 60px;
+    resize: none;
+    border-radius: 10px;
+}
+
+
+.btn {
+    background-color: #008CBA;
+    border: none;
+    margin-top: 3px;
+    border-radius: 3px;
+    color: white;
+    padding:10px;
+    transition-duration: 0.4s;
+}
+
+.btn:hover {
+    transform: scale(1.2);
+}
+.comment-body {
+    margin-left: 5cm;
+    margin-right: 5cm;
+    margin-top: 0.5cm;
+    border: 1px solid black;
+    overflow-wrap: break-word;
+    background-color: aliceblue;
+    padding: 10px;
+    font-family:cursive;
+}

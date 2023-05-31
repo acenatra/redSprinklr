@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="/stylesheets/style.css" rel="stylesheet"  />
+
+    <title>redSprinklr</title>
+
+
+  </head>
+
+
+  <body>
+
+
+    <div class = "default-post" >
+      <h1> Hi there, Welcomeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee! </h1>
+    </div>
+
+    
+    <div class="comment-section" >
+
+      <div class="create-comment">
+        <textarea class = "comment-box" > </textarea> <br>
+        <button class = "btn" > Comment! </button>   
+      </div>
+     
+    </div>
+ 
+      
+   
+    <script>
+    
+        let btn = document.querySelector(".btn");
+
+        let commentBox = document.querySelector('.comment-box');
+
+        commentBox.addEventListener('keydown', function(event) {
+
+            if (event.key === 'Enter' && !event.shiftKey) {
+               event.preventDefault(); 
+               btn.onclick();
+            }
+
+          });
+
+        btn.onclick = () => {
+
+ 
+          let commentText = commentBox.value;  
+
+          if (commentText) {
+        
+            let commentSection = document.querySelector('.comment-section');
+
+            let div = document.createElement('div')
+            div.setAttribute('class','comment-body')
+            div.textContent=commentText;
+
+            commentSection.prepend(div);
+
+            commentBox.value="";
+          }
+        }
+
+    </script>
+
+  </body>
+
+</html>
