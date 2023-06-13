@@ -1,28 +1,8 @@
 import { useState } from "react"
 import React from "react";
 
-function submissionHandler({ user, input, time }) {
-    const userComment = {
-        name: user,
-        comment: input,
-        likeCount: 0,
-        dislikeCount: 0,
-        time: time,
-    }
 
-    console.log("Received the following data: " + JSON.stringify(userComment));
-
-    let comments = localStorage.getItem('comments');
-    let updatedComments = comments + ',' + JSON.stringify(userComment);
-
-    localStorage.setItem('comments', updatedComments);
-
-    console.log("Appending: '" + JSON.stringify(userComment) + "' to the array contined at key: 'comments' in localStorage");
-
-    return;
-}
-
-export default function Post() {
+export default function Post({submissionHandler}) {
     const [name, setName] = useState("");
     const [comment, setComment] = useState("");
 
@@ -64,11 +44,11 @@ export default function Post() {
                 <br></br>
                 <br></br>
 
-                <input type="submit" onClick={() => {
+                <button type="submit" onClick={() => {
                     submissionHandler({ user: name, input: comment, time: Date.now() });
                     setComment("");
                     setName("");
-                }} />
+                }}>Comment </button>
 
             </form>
             <hr />
